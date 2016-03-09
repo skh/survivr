@@ -11,6 +11,9 @@ class Tribe
 	end
 	def tribal_council(options={})
 		not_immune = @members.select {|member| member != options[:immune]}
-		return not_immune.sample
+		eliminated = not_immune.sample
+		@members.delete(eliminated)
+		return eliminated
 	end
+
 end

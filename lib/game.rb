@@ -30,6 +30,6 @@ class Game
 
 	def individual_immunity_challenge
 		merge("combined tribe")
-		@merged.members.sample
+		@merged.tribal_council()
 	end
 end
