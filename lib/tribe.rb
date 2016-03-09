@@ -4,7 +4,8 @@ class Tribe
 	def initialize(options={})
 		@name = options[:name]
 		@members = options[:members]
-		puts "Tribe #{@name} created."
+		@color = options[:color] ? options[:color] : :white
+		puts "Tribe #{@name} created.".send(@color)
 	end
 	def to_s
 		@name

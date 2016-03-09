@@ -1,3 +1,5 @@
+require 'colorizr'
+
 require_relative "game"
 require_relative "tribe"
 require_relative "contestant"
@@ -10,8 +12,8 @@ require_relative "jury"
 @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
 
 # Create two new tribes with names
-@coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
-@hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
+@coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10), color: :green)
+@hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10), color: :light_blue)
 
 # Create a new game of Survivor
 @borneo = Game.new(@coyopa, @hunapu)
