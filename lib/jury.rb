@@ -35,6 +35,7 @@ class Jury
 				winner = finalist
 			end
 		end
+		puts "the winner is: #{winner}"
 		return winner
 	end
 end

@@ -18,11 +18,11 @@ class Game
 	end
 
 	def merge(name)
-		new_members = []
-		@tribes.each do |tribe|
-			new_members.concat(tribe.members)
-		end
 		if not @merged
+			new_members = []
+			@tribes.each do |tribe|
+				new_members.concat(tribe.members)
+			end
 			@merged = Tribe.new(name: name, members: new_members)
 		end
 		return @merged
@@ -30,6 +30,7 @@ class Game
 
 	def individual_immunity_challenge
 		merge("combined tribe")
-		@merged.tribal_council()
+		immune = @merged.members.sample
+		@merged.tribal_council(immune: immune)
 	end
 end
