@@ -21,7 +21,7 @@ class Jury
 	end
 	def report_votes(votes)
 		votes.each do |finalist, score|
-			puts "#{finalist}: #{score}"
+			puts "#{finalist}:".green + " " + "#{score}".blue
 		end
 	end
 	def announce_winner(votes)
